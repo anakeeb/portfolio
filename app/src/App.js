@@ -2,6 +2,7 @@ import React from 'react';
 import Portfolio from './img/portfolio.png'
 import FinancialLogo from './img/ffLogo.png'
 import TtrLogo from './img/ticTacRobotlogo.png'
+import ALogo from './img/movieLogo.png'
 import styled from 'styled-components'
 import CardDeck from 'react-bootstrap/CardDeck'
 import CardGroup from 'react-bootstrap/CardGroup'
@@ -15,7 +16,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      hovered: [false, false]
+      hovered: [false, false, false]
     }
 
     this.handleHoverOut = this.handleHoverOut.bind(this)
@@ -51,7 +52,7 @@ class App extends React.Component {
           background-position: center;
           background-size: cover;
           background-attachment: scroll;
-          height: 3100px;
+          height: 3400px;
           padding: 140px 100px;
           color: #ffffff
       }
@@ -97,6 +98,25 @@ class App extends React.Component {
         }
       }
 
+      .link3 {
+        background: #ffffff;
+        border: 40px solid #cccccc;
+        border-radius: 12px;
+        line-height: 450px;
+        height: 450px;
+        margin: auto;
+        margin-right: -1px;
+        margin-top: -1px;
+        padding: 0;
+        width: 500px;
+        justifyContent:'center';
+
+
+        &:hover {
+          border: 40px solid #888888;
+        }
+      }
+
       .imgLong {
         height: auto;
         max-width: 400px;
@@ -128,7 +148,6 @@ class App extends React.Component {
       <div>
         <h1 className='description'>Financial Forecast is a marriage between finance and deep learning.  Using a convolutional neural network and customizable stock data, the application will predict the stock price a day in the future.</h1>
       </div>
-      
     )
     let ttr = (
         <img className='imgLong' src={ TtrLogo }/>
@@ -136,8 +155,16 @@ class App extends React.Component {
     let ttrText = (
       <div>
         <h1 className='description'>Tic-Tac-Robot is a game that the user cannot win.  While it does not sound too fun for the user, it implements a minimax algorithm (optimized with alpha beta pruning) to play perfect tic-tac-toe as efficiently as possible.</h1>
-      </div>
-      
+      </div> 
+    )
+
+    let aLogo = (
+        <img className='imgLong' src={ ALogo }/>
+    )
+    let ttrText = (
+      <div>
+        <h1 className='description'>Academovie is a website the uses webscraping techniques and the Dale-Challs readibility formula to show more advanced statistics on reviews for any movie on IMDb.com</h1>
+      </div>   
     )
 
     // if (this.state.hovered[0]) {
@@ -281,6 +308,7 @@ class App extends React.Component {
           <br/>
           <br/>
           <br/>
+          <h1>peepee<h1>
           <br/>
           <br/>
           <br/>
@@ -324,7 +352,7 @@ class App extends React.Component {
               <Col>
               </Col>
               <Col>
-                <a>
+                <a href='https://anakeeb.github.io/academovie-deploy'>
                   <button className='link2' onMouseEnter={() => this.handleHoverIn(1)} onMouseLeave={() => this.handleHoverOut(1)}>
                     { this.state.hovered[1] ? ttrText : ttr }
                   </button>
@@ -334,8 +362,29 @@ class App extends React.Component {
               <Col>
               </Col>
             </Row>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <Row>
+              <Col>
+              </Col>
+              
+              <Col>
+              </Col>
+              <Col>
+                <a href='https://anakeeb.github.io/academovie-deploy'>
+                  <button className='link3' onMouseEnter={() => this.handleHoverIn(2)} onMouseLeave={() => this.handleHoverOut(2)}>
+                    { this.state.hovered[2] ? aText : aLogo }
+                  </button>
+                </a> 
+              </Col>
+              <Col>
+              </Col>
+              <Col>
+              </Col>
+            </Row>
           </Container>
-          
         </div>
       </Styles>
       
